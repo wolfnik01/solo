@@ -29,7 +29,7 @@ public class MemberDAO {
 			Context init = new InitialContext();
 
 			// DB연결정보를 불러오기 "Java:comp/env/설정이름"
-			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/funwebDB");
+			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/SPJDB");
 
 			// ds 사용해서 연결
 

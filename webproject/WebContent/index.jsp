@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<%
 	  //프로젝트의 시작 페이지
 	  response.sendRedirect("./main/main.jsp");
