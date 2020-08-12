@@ -55,28 +55,19 @@
 <input type="password" name="pw2"><br>
 <label>이름</label>
 <input type="text" name="name"><br>
-<label>E-Mail</label>
-<input type="email" name="email"><br>
-<label>생년월일</label>
-<input type="text" name="birth"><br>
-<label>성별</label>
-<input type="radio" name="gender" value="남"> 남
-<input type="radio" name="gender" value="여"> 여<br>
-</fieldset>
-
-<fieldset>
-<legend>선택사항</legend>
-<label>주소</label>
-<input type="text" name="addr"><br>
 <label>전화번호</label>
 <input type="text" name="phone"><br>
-<label>휴대전화번호</label>
-<input type="text" name="mobile"><br>
+<label>E-Mail</label>
+<input type="email" name="email"><br>
+<label>성별</label>
+<input type="radio" name="gender" value="남">남
+<input type="radio" name="gender" value="여">여<br>
 </fieldset>
+
 <div class="clear"></div>
 <div id="buttons">
-<input type="submit" value="Submit" class="submit">
-<input type="reset" value="Cancel" class="cancel">
+<input type="submit" value="회원가입" class="submit">
+<input type="reset" value="취소" class="cancel">
 </div>
 </form>
 </article>
@@ -102,7 +93,39 @@
 				
 				document.fr.id.focus();
 				return false;
-			}	
+			}
+			
+			if(pw == ""){
+				   alert(" 비밀번호를 입력하시오. ");
+				   document.fr.pw.focus();
+				   return false;	   
+			   }
+			   if(pw2 == ""){
+				   alert(" 비밀번호 확인창을 입력하시오. ");
+				   document.fr.pw2.focus();
+				   return false;	   
+			   }
+			   
+			   if(pw != pw2){
+				   alert(" 입력하신 비밀번호가 다릅니다." );
+				   document.fr.pw2.select();
+				   return false;		   
+			   }
+			   
+			   if(document.fr.gender[0].checked == false &&
+					      document.fr.gender[1].checked == false ){
+						   if(jumin.charAt(7) == 1 || jumin.charAt(7) == 3){
+							   alert("남성");
+							   document.fr.gender[0].checked = true;
+						   }
+						   
+						   if(jumin.charAt(7) == 2 || jumin.charAt(7) == 4){
+							   alert("여성");
+							   document.fr.gender[1].checked = true;
+						   }
+					   }
+			
+			
 
 		} //////////check()//////////////
 		
@@ -116,14 +139,32 @@
 			// 값이 비어있을경우 "ID를 입력하시오", focus(), 진행 x
 			// 값이 있을경우 진행 O
 					
-			
-			
 			// 새창을 열어서 페이지 오픈 => 회원 아이디 정보 중복체크
 			// 페이지 이동시 입력한 ID값 가지고 이동
 			var id = document.fr.id.value;
 			window.open("joinIdCheck.jsp?userid="+id,"","width=400,height=200");
 			
+			
+			
+			
 		} 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	</script>
 
