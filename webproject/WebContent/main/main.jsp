@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>개인프로젝트</title>
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/front.css" rel="stylesheet" type="text/css">
 

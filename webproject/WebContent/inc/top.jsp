@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <link href="../css/top.css" rel="stylesheet" type="text/css">
+    
 	<%
 	  // 화면 상단에 위치하는 메뉴처리 (모든페이지에 공유)
 	  
@@ -8,6 +10,7 @@
 	%>
 	
 <header>
+<script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
 <div id="login">
 <%
 if(id == null){
@@ -28,13 +31,19 @@ if(id == null){
 <!-- 로고들어가는 곳 -->
 <nav id="top_menu">
 <ul>
-	<li><a href="../index.jsp">HOME</a></li>
-	<li><a href="../company/welcome.html">COMPANY</a></li>
-	<li><a href="#">SOLUTIONS</a></li>
-	<li><a href="../center/notice.jsp">CUSTOMER CENTER</a></li>
-	<li><a href="#">CONTACT US</a></li>
+	<li><a href="../index.jsp">홈</a></li>
+	<li><a href="../center/notice.jsp">오늘 뭐먹지?</a></li>
+	<li><a href="../center/notice.jsp">오늘 뭐하지?</a></li>
+	<li><a href="../center/notice.jsp">여기는 어때?</a></li>
 </ul>
 </nav>
+
+<!-- <div class="left">
+<ul>
+ <li><i class="fab fa-twitter-square" ></i><li>
+</ul>
+</div> -->
+
 </header>
 
 	

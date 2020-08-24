@@ -75,7 +75,7 @@ public class MemberDAO {
 
 			con = getCon();
 
-			sql = "insert into fun_member(id,pw,name,email,birth,gender,"
+			sql = "insert into solo_member(id,pw,name,email,birth,gender,"
 					+ "addr,phone,mobile,reg_date) values(?,?,?,?,?,?,?,?,?,?)";
 
 			pstmt = con.prepareStatement(sql);
@@ -117,7 +117,7 @@ public class MemberDAO {
 
 			// SQL(select) - pstmt
 			// 전달 받은 ID에 해당하는 정보가 있는지 판단
-			sql = "select * from fun_member where id=?";
+			sql = "select * from solo_member where id=?";
 
 			// 실행
 			pstmt = con.prepareStatement(sql);
@@ -155,7 +155,7 @@ public class MemberDAO {
 
 			// sql(id에 해당하는 정보가 있는지 없는지 판단)
 
-			sql = "select pw from fun_member where id=?";
+			sql = "select pw from solo_member where id=?";
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);

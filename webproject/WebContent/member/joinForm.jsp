@@ -44,7 +44,7 @@
 <article>
 <h1>Join Us</h1>
 <form action="joinPro.jsp" name="fr" method="post" id="join" onsubmit="return check()">
-<fieldset>
+<!-- <fieldset> -->
 <legend>회원가입 정보</legend>
 <label>아이디</label>
 <input type="text" name="id" class="id">
@@ -58,11 +58,11 @@
 <label>전화번호</label>
 <input type="text" name="phone"><br>
 <label>E-Mail</label>
-<input type="email" name="email"><br>
+<input type="text" name="email"><br>
 <label>성별</label>
-<input type="radio" name="gender" value="남">남
-<input type="radio" name="gender" value="여">여<br>
-</fieldset>
+<input type="radio" name="gen" value="남">남
+<input type="radio" name="gen" value="여">여<br>
+<!-- </fieldset> -->
 
 <div class="clear"></div>
 <div id="buttons">
@@ -86,20 +86,35 @@
 		// 추가 정보는 입력을 안해도 됨
 		
 		function check(){
+			
+			var id = document.fr.id.value;
+			var pw = document.fr.pw.value;
+			var pw2 = document.fr.pw2.value;
+			var name = document.fr.name.value;
+			var phone = document.fr.phone.value;
+			var email = document.fr.email.value;
+			var ra1 = document.fr.gen[0].checked;
+ 			var ra2 = document.fr.gen[1].checked;
+ 			
+			
 			// alert("테스트");
 			// 아이디가 입력이 안되어있을경우 "아이디를 입력하시오"
-			if(document.fr.id.value.length <= 0) {
+			if(id.length <= 0) {
 				alert("아이디를 입력하시오");
 				
 				document.fr.id.focus();
 				return false;
 			}
 			
+		
+			
 			if(pw == ""){
 				   alert(" 비밀번호를 입력하시오. ");
 				   document.fr.pw.focus();
 				   return false;	   
 			   }
+			
+			
 			   if(pw2 == ""){
 				   alert(" 비밀번호 확인창을 입력하시오. ");
 				   document.fr.pw2.focus();
@@ -112,20 +127,32 @@
 				   return false;		   
 			   }
 			   
-			   if(document.fr.gender[0].checked == false &&
-					      document.fr.gender[1].checked == false ){
-						   if(jumin.charAt(7) == 1 || jumin.charAt(7) == 3){
-							   alert("남성");
-							   document.fr.gender[0].checked = true;
-						   }
-						   
-						   if(jumin.charAt(7) == 2 || jumin.charAt(7) == 4){
-							   alert("여성");
-							   document.fr.gender[1].checked = true;
-						   }
-					   }
+			   if(name == ""){
+				   alert(" 이름을 입력하세요." );
+				   document.fr.name.focus();
+				   return false;		   
+			   }
 			
-			
+			   if(phone == ""){
+				   alert(" 전화번호를 입력하세요." );
+				   document.fr.phone.focus();
+				   return false;   
+			   }
+				
+			   if(email == ""){
+				   alert(" E-mail주소를 입력하세요." );
+				   document.fr.email.focus();
+				   return false;	   
+			   }
+			   
+				   
+			   if(ra1 == false && ra2 == false){
+				   alert(" 성별을 선택하세요." );
+				   document.fr.gen[0].focus();
+				   return false;
+			   }
+			   
+
 
 		} //////////check()//////////////
 		
@@ -167,7 +194,5 @@
 		
 		
 	</script>
-
-
 </body>
 </html>
