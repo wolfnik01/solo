@@ -29,8 +29,9 @@ font-size: 12px;word-spacing: 5px}
 /*정렬 왼쪽 너비 265px 밖여백 60px 0 0 40px*/
 header{height: 151px;margin: 0px;padding: 0px}
 /*높이 151px 밖여백 0 안여백 0*/
-nav#top_menu{width: 600px; margin: 50px 20px 0 0;
-float: right;}
+nav#top_menu {
+	width: 500px; margin: 10px 10px 0 0;
+float: left;}
 /*너비 600px 밖여백 50px 20px 0 0 정렬 오른쪽*/
 nav#top_menu ul{list-style:none;
 font-family: verdana,Geneba,sans-serif;
@@ -46,6 +47,22 @@ nav#top_menu a:hover{
 	background-image:url("../images/blue.gif");
 	background-repeat: repeat-x;
 	background-position: bottom;}
+	
+.left { 
+	float: left;
+	
+	}
+	
+.left>ul {
+	display: block;
+	list-style: none;
+}
+	
+/* .right {border: 1px solid red;
+	float: right;}	 */
+	
+	
+	
 /*배경이미지 blue.gif 배경반복 x 배경위치 아래*/
 
 /*footer부분*/

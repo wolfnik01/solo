@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>개인프로젝트</title>
-<link href="../css/default.css" rel="stylesheet" type="text/css">
+<link href="../css/top.css" rel="stylesheet" type="text/css">
 <link href="../css/front.css" rel="stylesheet" type="text/css">
 
 <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
 <body>
 <div id="wrap">
 <!-- 헤더파일들어가는 곳 (페이지 인클루드) -->
-	<jsp:include page="../inc/top.jsp" />
+	<jsp:include page="../inc/header.jsp" />
 <!-- 헤더파일들어가는 곳 -->
 
 <!-- 메인이미지 들어가는곳 -->

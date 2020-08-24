@@ -29,7 +29,7 @@
 <body>
 <div id="wrap">
 <!-- 헤더들어가는 곳 -->
-<jsp:include page="../inc/top.jsp"/>
+<jsp:include page="../inc/header.jsp"/>
 <!-- 헤더들어가는 곳 -->
 
 <!-- 본문들어가는 곳 -->
