@@ -63,7 +63,7 @@
 //      // 테이블에 글이 있는지 없는지 판단(getBoardCount())
 //      int count = bdao.getBoardCount();
      
-//      System.out.println("테이블에 저장된 글의 수 : "+count);
+      System.out.println("테이블에 저장된 글의 수 : "+cnt);
 
 
      // 페이징 처리************************************************
@@ -121,8 +121,8 @@
 		        if(bb.getRe_lev()>0){
 		        	wid = 10 * bb.getRe_lev();
 		       %>
-		         <img src="level.gif" width="<%=wid%>" height="15">
-		         <img src="re.gif">
+		         <img class="left" src="../images/level.gif" width="<%=wid%>" height="15">
+		         <img  class="left" src="../images/re.gif">
 		       <%
 		        }
 		       %>
@@ -137,6 +137,7 @@
 <% } %>
 
 </table>
+
 <div id="table_search">
 <input type="text" name="search" class="input_box">
 <input type="button" value="search" class="btn">

@@ -147,7 +147,7 @@ public class BoardDAO {
 					count = rs.getInt(1);
 				}
 				
-				// System.out.println(" 게시판 글 개수 확인  : " + count);
+				System.out.println(" 게시판 글 개수 확인  : " + count);
 
 				// 값 리턴
 

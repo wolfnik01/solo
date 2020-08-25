@@ -27,11 +27,12 @@
 
 </head>
 <body>
-<div id="wrap">
+
+
 <!-- 헤더파일들어가는 곳 (페이지 인클루드) -->
 	<jsp:include page="../inc/header.jsp" />
 <!-- 헤더파일들어가는 곳 -->
-
+<div id="wrap">
 <!-- 메인이미지 들어가는곳 -->
 <div class="clear"></div>
 <div id="main_img"><img src="../images/main_img.jpg"
