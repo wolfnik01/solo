@@ -1,0 +1,97 @@
+@CHARSET "UTF-8";
+
+
+body {
+	margin: 0;
+}
+
+.h1 {
+	width: 971px; text-align: left;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:VISITED {
+	text-decoration: none;
+	color: #000000;
+}
+
+.navbar {
+	display: flex;
+	background-color: #bfe6d3;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px 12px;
+}
+
+.logo {
+	font-size: 18px;
+}
+
+.logo img {
+	
+}
+
+.login {
+	padding: 8px 12px;
+}
+
+.top_menu {
+	display: flex;
+	list-style: none;
+	padding-left: 0;
+}
+
+.top_menu li {
+	padding: 8px 12px;
+}
+
+.top_menu li:HOVER {
+	background-color: #feb756;
+	border-radius: 4px;
+}
+
+.login {
+	padding-left: 0;
+}
+
+.top_toogle {
+	display: none;
+	position: absolute;
+	right: 32px;
+	font-size: 24px;
+	color: #000000;
+}
+@MEDIA screen and (max-width: 768px) {
+	.navbar {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 8px 24px;
+	}
+	.top_menu {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	.top_menu li {
+		width: 100%;
+		text-align: center;
+	}
+	.login {
+		display: none;
+		width: 100%;
+		text-align: center;
+	}
+	.top_toogle {
+		display: block;
+	}
+	
+	.top_menu.active,
+	.login.active {
+	display: inline-block;
+	}
+}
