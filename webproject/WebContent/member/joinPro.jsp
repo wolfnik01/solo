@@ -25,7 +25,7 @@
 	 <%
 	 // 날짜 정보 저장
 	 
-	 mb.setReg_date(new Date(System.currentTimeMillis()));
+	 mb.setReg_date(new Timestamp(System.currentTimeMillis()));
 	 
 	 // MemberDAO 객체 생성 -> 전달받은 정보 모두를 저장
 	 
