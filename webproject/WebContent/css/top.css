@@ -1,12 +1,11 @@
 @CHARSET "UTF-8";
 
-
 body {
 	margin: 0;
 }
 
-.h1 {
-	width: 971px; text-align: left;
+.h001 {
+	width: 971px;
 	margin: auto;
 }
 
@@ -19,15 +18,15 @@ a:VISITED {
 	color: #000000;
 }
 
-.navbar {
+.navbar3 { 
 	display: flex;
-	background-color: #bfe6d3;
+	background-color: #d5f1ff;
 	align-items: center;
 	justify-content: space-between;
 	padding: 8px 12px;
 }
 
-.logo {
+.logo { 
 	font-size: 18px;
 }
 
@@ -35,34 +34,127 @@ a:VISITED {
 	
 }
 
-.login {
+.search {
+	margin: 8px 12px;
+}
+
+.login01 { 
 	padding: 8px 12px;
+}
+
+.navbar2 {
+	background-color: #c5fce0;
+	background-size: 8em;
 }
 
 .top_menu {
 	display: flex;
 	list-style: none;
-	padding-left: 0;
+	text-align: center;
 }
 
 .top_menu li {
-	padding: 8px 12px !important;
-	font-size:20px !important;
+	padding: 8px 12px;
+	font-size: 12px;
+	text-align: center;
 }
 
-.textimp{font-size:18px !important;}
-.textimp a:link{color:#000 !important;}
-.textimp a:VISITED{color:#000 !important;}
-.login{font-size:0.7em !important;}
-.login a:link{color:#000 !important;}
+fieldset {
+	position: relative;
+	display: inline-block;
+	padding: 0 0 0 40px;
+	background: #fff;
+	border: none;
+	border-radius: 5px;
+}
 
+.scinput, .btn01 {
+	position: relative;
+	width: 200px;
+	height: 50px;
+	padding: 0;
+	display: inline-block;
+	float: left;
+}
+
+/* 검색창과 버튼 너비 크기 설정 */
+
+
+
+input {
+	color: #666;
+	z-index: 2;
+	border: 0 none;
+}
+
+.scinput:focus {
+	outline: 0 none;
+}
+/* 마우스로 클릭 후 입력할 때의 반응에 대한 설정 */
+.scinput:focus+ .btn01 {
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+.scinput:focus+ .btn01 .fa {
+	-webkit-transform: translate(0px, 0);
+	-ms-transform: translate(0px, 0);
+	transform: translate(0px, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	color: #fff;
+}
+
+.btn01 {
+	z-index: 1;
+	width: 50px;
+	border: 0 none;
+	background: #fbcbfc;
+	cursor: pointer;
+	border-radius: 0 5px 5px 0;
+	-webkit-transform: translate(-50px, 0);
+	-ms-transform: translate(-50px, 0);
+	transform: translate(-50px, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+
+	/* 이상 버튼의 공간에 대한 설정 */
+}
+
+.fa-search {
+	font-size: 1.4rem;
+	color: #29abe2;
+	z-index: 3;
+	top: 25%;
+	-webkit-transform: translate(-190px, 0);
+	-ms-transform: translate(-190px, 0);
+	transform: translate(-190px, 0);
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+
+	/*  이상 왼쪽 돋보기 이미지 위치 이동 설정 */
+}
+
+
+.login01 {
+	font-size: 0.7em;
+}
+
+.login01 a:link {
+	color: #000;
+}
 
 .top_menu li:HOVER {
 	background-color: #feb756;
 	border-radius: 4px;
 }
 
-.login {
+.login01 {
 	padding-left: 0;
 }
 
@@ -73,6 +165,7 @@ a:VISITED {
 	font-size: 24px;
 	color: #000000;
 }
+
 @MEDIA screen and (max-width: 768px) {
 	.navbar {
 		flex-direction: column;
@@ -89,7 +182,7 @@ a:VISITED {
 		width: 100%;
 		text-align: center;
 	}
-	.login {
+	.login01 {
 		display: none;
 		width: 100%;
 		text-align: center;
@@ -97,9 +190,7 @@ a:VISITED {
 	.top_toogle {
 		display: block;
 	}
-	
-	.top_menu.active,
-	.login.active {
-	display: flex;
+	.top_menu.active, .login01.active {
+		display: flex;
 	}
 }

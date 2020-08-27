@@ -34,13 +34,13 @@
 
 		<!-- 본문들어가는 곳 -->
 		<!-- 메인이미지 -->
-		<div id="sub_img_center"></div>
+		<div></div>
 		<!-- 메인이미지 -->
 
 		<!-- 왼쪽메뉴 -->
 		<nav id="sub_menu">
 			<ul>
-				<li><a href="writeForm.jsp">글쓰기</a></li>
+				<li><a href="test.jsp">글쓰기</a></li>
 				<li><a href="notice.jsp">글 목록 보기</a></li>
 				<li><a href="#">파일 업로드/다운로드</a></li>
 				<li><a href="#">Service Policy</a></li>

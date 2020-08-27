@@ -18,24 +18,22 @@
 	  String id = (String)session.getAttribute("id");
 	%>
 	
-<header class="h1">
+<header class="h001">
 <script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
-<nav class="navbar">
+<nav class="navbar3">
 <!-- 로고들어가는 곳 -->
 <div class="logo">
+<a href="../index.jsp">
 <img id="main_logo" src="../images/Angkko.png"  width="50" alt="logo" style="vertical-align:middle">
+</a>
 <a href="../index.jsp">앙꼬네맛집</a>
 </div>
 <!-- 로고들어가는 곳 -->
 
-<ul  class="top_menu" >
-	<li><a href="../index.jsp">홈</a></li>
-	<li><a href="../center/notice.jsp"><span class="textimp">오늘 뭐먹지?</span></a></li>
-	<li><a href="../center/notice.jsp">오늘 뭐하지?</a></li>
-	<li><a href="../center/notice.jsp">여기는 어때?</a></li>
-</ul>
+<form><fieldset><input class="scinput" type="search" /><button class="btn01" type="submit"><i class="fa fa-search"></i></button></fieldset></form>
 
-<div class="login">
+
+<div class="login01">
 <%
 if(id == null){
 %>
@@ -56,6 +54,15 @@ if(id == null){
 <i class="fas fa-bars"></i>
 </a>
 </nav>
+
+<div class="navbar2">
+
+<ul  class="top_menu" >
+	<li><a href="../center/fWriteForm.jsp">오늘 뭐먹지?</a></li>
+	<li><a href="../center/notice.jsp">오늘 뭐하지?</a></li>
+	<li><a href="../center/notice.jsp">여기는 어때?</a></li>
+</ul>
+</div>
 
 
 <!-- <div class="left">
