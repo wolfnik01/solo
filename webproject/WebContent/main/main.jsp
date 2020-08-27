@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>개인프로젝트</title>
-<link href="../css/top.css" rel="stylesheet" type="text/css">
+
 <link href="../css/front.css" rel="stylesheet" type="text/css">
+<link href="../css/top.css" rel="stylesheet" type="text/css">
 
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>

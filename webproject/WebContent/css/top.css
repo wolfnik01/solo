@@ -46,8 +46,16 @@ a:VISITED {
 }
 
 .top_menu li {
-	padding: 8px 12px;
+	padding: 8px 12px !important;
+	font-size:20px !important;
 }
+
+.textimp{font-size:18px !important;}
+.textimp a:link{color:#000 !important;}
+.textimp a:VISITED{color:#000 !important;}
+.login{font-size:0.7em !important;}
+.login a:link{color:#000 !important;}
+
 
 .top_menu li:HOVER {
 	background-color: #feb756;
@@ -92,6 +100,6 @@ a:VISITED {
 	
 	.top_menu.active,
 	.login.active {
-	display: inline-block;
+	display: flex;
 	}
 }
