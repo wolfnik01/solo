@@ -61,6 +61,9 @@ nav#top_menu a:hover{
 /* .right {border: 1px solid red;
 	float: right;}	 */
 	
+element.style {
+    height: 600px;
+}	
 	
 	
 /*배경이미지 blue.gif 배경반복 x 배경위치 아래*/

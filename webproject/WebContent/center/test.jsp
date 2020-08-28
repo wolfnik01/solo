@@ -22,9 +22,13 @@
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 
+<script src="../script/main.js" defer></script>
+<script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
+
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/subpage.css" rel="stylesheet" type="text/css">
 <link href="../css/top.css" rel="stylesheet" type="text/css">
+
 
 </head>
 <body>
@@ -41,7 +45,7 @@
 		<!-- 왼쪽메뉴 -->
 		<nav id="sub_menu">
 		<ul>
-			<li><a href="#">글쓰기</a></li>
+			<li><a href="test.jsp">글쓰기</a></li>
 			<li><a href="notice.jsp">글 목록 보기</a></li>
 			<li><a href="#">파일 업로드/다운로드</a></li>
 			<li><a href="#">Service Policy</a></li>
@@ -61,38 +65,65 @@
  		response.sendRedirect("../member/loginForm.jsp");
  	}
  %>
+ 		
+ 		
+ 
 		<form action="writePro.jsp" method="post" name="fr">
-			<div id="summernote">Hello Summernote</div>
+		<div id="sumsub">
+		<input class="sumsub" type="text" value="제목">
+		</div>
+			<div id="summernote"> dasdasdasdasds</div>
 
 			<!-- <form method="post">
   <textarea id="summernote" name="editordata"></textarea>
 </form> -->
+			
+			
 
 			<script type="text/javascript">
+			 	
+			
+			
 				$(document).ready(function() {
-					$('#summernote').summernote();
+					$('#summernote').summernote({
+						 height: 300,                 // 에디터 높이
+						  minHeight: null,             // 최소 높이
+						  maxHeight: null,             // 최대 높이
+						  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
+						  lang: 'en-US',					// 한글 설정
+						  placeholder: '최대 2048자까지 쓸 수 있습니다', //placeholder 설정
+						  callbacks: { // 콜백을 사용
+		                        // 이미지를 업로드할 경우 이벤트를 발생
+							    onImageUpload: function(files, editor, welEditable) {
+								    sendFile(files[0], this);
+								}
+							}						
+					});
+					
+					/* summernote에서 이미지 업로드시 실행할 함수 */
+					function sendFile(file, editor) {
+						// 파일 전송을 위한 폼생성
+						data = new FormData();
+						data.append("uploadFile", file);
+						$.ajax({ // ajax를 통해 파일 업로드 처리
+							data : data,
+							type : "POST",
+							url : "./summernote_imageUpload.jsp",
+							cache : false,
+							contentType : false,
+							processData : false,
+							success : function(data) { // 처리가 성공할 경우
+								// 에디터에 이미지 출력
+								$(editor).summernote('editor.insertImage', data.url);
+							}
+						});
+					}
+					
 				});
 			</script>
-			<script type="text/javascript">
-	/* summernote에서 이미지 업로드시 실행할 함수 */
-	function sendFile(file, editor) {
-		// 파일 전송을 위한 폼생성
-		data = new FormData();
-		data.append("uploadFile", file);
-		$.ajax({ // ajax를 통해 파일 업로드 처리
-			data : data,
-			type : "POST",
-			url : "./summernote_imageUpload.jsp",
-			cache : false,
-			contentType : false,
-			processData : false,
-			success : function(data) { // 처리가 성공할 경우
-				// 에디터에 이미지 출력
-				$(editor).summernote('editor.insertImage', data.url);
-			}
-		});
-	}
-</script>
+			
+			
+		
 			<div id="table_search">
 				<input type="submit" value="글쓰기" class="btn">
 			</div>
