@@ -50,8 +50,8 @@ if(id == null){
 <div class="navbar2">
 
 <ul  class="top_menu" >
-	<li><a href="../center/fWriteForm.jsp">오늘 뭐먹지?</a></li>
-	<li><a href="../center/notice.jsp">오늘 뭐하지?</a></li>
+	<li><a href="../review/notice.jsp">오늘 뭐먹지?</a></li>
+	<li><a href="../HotPlace/notice.jsp">오늘 뭐하지?</a></li>
 	<li><a href="../center/notice.jsp">여기는 어때?</a></li>
 </ul>
 </div>

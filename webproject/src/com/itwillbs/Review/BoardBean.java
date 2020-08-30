@@ -1,4 +1,4 @@
-package com.itwillbs.Board;
+package com.itwillbs.Review;
 
 import java.sql.Date;
 

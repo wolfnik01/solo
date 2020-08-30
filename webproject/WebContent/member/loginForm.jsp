@@ -5,8 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="../script/main.js" defer></script>
+<script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
+
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/subpage.css" rel="stylesheet" type="text/css">
+<link href="../css/top.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -35,20 +39,19 @@
 <!-- 왼쪽메뉴 -->
 <nav id="sub_menu">
 <ul>
-<li><a href="#">Join us</a></li>
+<li><a href="joinForm.jsp">회원가입</a></li>
 <li><a href="#">Privacy policy</a></li>
 </ul>
 </nav>
 <!-- 왼쪽메뉴 -->
 <!-- 본문내용 -->
 <article>
-<h1>로그인</h1>
+<legend>로그인</legend>
 <form action="loginPro.jsp" method="post" id="join">
 <fieldset>
-<legend>Login Info</legend>
-<label>User ID</label>
+<label>아이디</label>
 <input type="text" name="id"><br>
-<label>Password</label>
+<label>비밀번호</label>
 <input type="password" name="pw"><br>
 </fieldset>
 <div class="clear"></div>

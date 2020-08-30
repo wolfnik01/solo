@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.itwillbs.Board.BoardBean"%>
+<%@page import="com.itwillbs.Review.BoardBean"%>
 <%@page import="java.util.List"%>
-<%@page import="com.itwillbs.Board.BoardDAO"%>
+<%@page import="com.itwillbs.Review.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,14 +10,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="../script/main.js" defer></script>
-<script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/3a52ba898d.js"
+	crossorigin="anonymous"></script>
 
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/subpage.css" rel="stylesheet" type="text/css">
 <link href="../css/top.css" rel="stylesheet" type="text/css">
- 
- 
- 
+
+
+
 </head>
 <body>
 	<div id="wrap">
@@ -68,15 +69,24 @@
 				<tr>
 					<th colspan="2"><%=bb.getSubject()%></th>
 				</tr>
-				<td>첨부파일</td>
-				<td><%=bb.getFile()%></td>
 			</table>
-			
+
 			<table>
 				<tr>
-					<td><%=bb.getContent()%></td>
+					<td class="ssimg"><img src="d:\\upfile\\<%=bb.getFile()%>"></td>
 				</tr>
-
+				<tr>
+					<td class="rvn"><%=bb.getName()%></td>
+				</tr>
+				<tr>
+					<td class="rvda"><%=bb.getDate()%></td>
+				</tr>
+				<tr>
+					<td class="rvrc"><%=bb.getReadcount()%></td>
+				</tr>
+				<tr>
+					<td class="rvar"><%=bb.getAddr()%></td>
+				</tr>
 			</table>
 
 
@@ -112,6 +122,25 @@
 				</tr>
 
 			</table>
+
+			<form action="">
+				<table>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+						<input type="text" name="cmt" value="<%=bb.getName()%>">
+						</td>
+						<td>
+						<textarea></textarea>
+						</td>
+					</tr>
+				</table>
+			</form>
+
+
 
 		</article>
 		<!-- 게시판 -->

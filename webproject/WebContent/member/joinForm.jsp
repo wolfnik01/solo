@@ -5,8 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="../script/main.js" defer></script>
+<script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
+
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/subpage.css" rel="stylesheet" type="text/css">
+<link href="../css/top.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
 <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
@@ -21,6 +25,8 @@
 
  </script>
  <![endif]-->
+ 
+ 
 </head>
 <body>
 <div id="wrap">
@@ -42,10 +48,9 @@
 <!-- 왼쪽메뉴 -->
 <!-- 본문내용 -->
 <article>
-<h1>Join Us</h1>
+<legend><h1>회원가입</h1></legend>
 <form action="joinPro.jsp" name="fr" method="post" id="join" onsubmit="return check()">
 <!-- <fieldset> -->
-<legend>회원가입 정보</legend>
 <label>아이디</label>
 <input type="text" name="id" class="id">
 <input type="button" value="중복체크" class="dup" onclick="winopen();"><br>
@@ -60,8 +65,8 @@
 <label>E-Mail</label>
 <input type="text" name="email"><br>
 <label>성별</label>
-<input type="radio" name="gen" value="남">남
-<input type="radio" name="gen" value="여">여<br>
+<input type="radio" name="gender" value="남"> 남 
+<input type="radio" name="gender" value="여"> 여 <br>
 <!-- </fieldset> -->
 
 <div class="clear"></div>
@@ -93,8 +98,8 @@
 			var name = document.fr.name.value;
 			var phone = document.fr.phone.value;
 			var email = document.fr.email.value;
-			var ra1 = document.fr.gen[0].checked;
- 			var ra2 = document.fr.gen[1].checked;
+			var ra1 = document.fr.gender[0]
+ 			var ra2 = document.fr.gender[1]
  			
 			
 			// alert("테스트");
@@ -116,7 +121,7 @@
 			
 			
 			   if(pw2 == ""){
-				   alert(" 비밀번호 확인창을 입력하시오. ");
+				   alert(" 비밀번호를 입력하시오. ");
 				   document.fr.pw2.focus();
 				   return false;	   
 			   }
@@ -144,14 +149,14 @@
 				   document.fr.email.focus();
 				   return false;	   
 			   }
+			   if(ra1.checked == false && ra2.checked == false){
+	 				
+	 				alert("성별을 선택하시오.");
+	 				ra1.focus();
+	 				return false; 
+	 				}
 			   
-				   
-			   if(ra1 == false && ra2 == false){
-				   alert(" 성별을 선택하세요." );
-				   document.fr.gen[0].focus();
-				   return false;
-			   }
-			   
+			   			   
 
 
 		} //////////check()//////////////
@@ -170,29 +175,10 @@
 			// 페이지 이동시 입력한 ID값 가지고 이동
 			var id = document.fr.id.value;
 			window.open("joinIdCheck.jsp?userid="+id,"","width=400,height=200");
-			
-			
-			
-			
+
 		} 
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	</script>
 </body>
 </html>

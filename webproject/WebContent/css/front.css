@@ -10,7 +10,14 @@ background-position: center top;}
 #main_img img{margin: 9px 0 0 0}/*밖여백 9px 0 0 0*/
 
 article#front{margin: 5px 0px 5px 0px}
-/*밖여백 5px 0 5px 0*/
+/*밖여백 5px 0 5px 0*/commons-collections4-4.4.jar
+commons-dbcp2-2.7.0.jar
+commons-pool2-2.8.0.jar
+cos.jar
+jai_codec.jar
+jai_core.jar
+json-simple-1.1.1.jar
+mysql-connector-java-5.1.49-bin.jar
 #solution{border: solid 1px #FFFFFF;
 border-radius:10px ; width: 910px; min-height: 150px;
 background-color: #ebebeb; padding: 10px;

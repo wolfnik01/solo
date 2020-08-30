@@ -1,5 +1,5 @@
-<%@page import="com.itwillbs.Board.BoardDAO"%>
-<%@page import="com.itwillbs.Board.BoardBean"%>
+<%@page import="com.itwillbs.Review.BoardDAO"%>
+<%@page import="com.itwillbs.Review.BoardBean"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -64,7 +64,7 @@
      bdao.insertBoard(bb);
      
      // 목록페이지로 이동
-     response.sendRedirect("boardList.jsp");   
+     response.sendRedirect("notice.jsp");
      
      
    

@@ -7,12 +7,13 @@
 
 <footer>
 <hr>
-<div id="copy">All contents Copyright 2011 FunWeb 2011 FunWeb 
-Inc. all rights reserved<br>
-Contact mail:funweb@funwebbiz.com Tel +82 64 123 4315
-Fax +82 64 123 4321</div>
-<div id="social"><img src="../images/facebook.gif" width="33" 
-height="33" alt="Facebook">
-<img src="../images/twitter.gif" width="34" height="34"
-alt="Twitter"></div>
+<div id="copy">
+꾸역꾸역 만들다가 멘탈나가게만든 홈페이지 <br>
+정말로 취직할수있을가란 생각이 들게끔 만든 홈페이지 <br>
+나중에 수정할 멘트
+</div>
+<div id="social"><a href="https://www.facebook.com/"><img src="../images/facebook.gif" width="33" 
+height="33" alt="Facebook"></a>
+<a href="https://twitter.com/?lang=ko"><img src="../images/twitter.gif" width="34" height="34"
+alt="Twitter"></a></div>
 </footer>
