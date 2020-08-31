@@ -17,8 +17,17 @@
      
      // 파일이 저장되는 위치 (D:/upfile)
      String savePath = "d:\\upfile"; 
+     String uploadPath = request.getRealPath("/upload");
      // 파일 업로드 최대 크기 5MB (20~250MB)
      int maxSize =  10 * 1024 * 1024;
+     
+  // 정보 저장 변수
+  		String name = "";
+  		String subject = "";
+  		String content = "";
+  		String addres = "";
+  		String filename = "";
+  		String OFilename = "";
      
      // MultipartRequest(요청정보,파일 업로드할 폴더,파일 업로드 제한 크기,인코딩방식,파일 이름동일시 처리객체)
      
@@ -33,6 +42,11 @@
      
      // 파일 업로드 완료
      out.println("파일 업로드 완료!");
+     
+     name = multi.getParameter("name");
+	subject = multi.getParameter("subject");
+	content = multi.getParameter("content");
+	addres = multi.getParameter("addres");
      /////////////////////////////////////////////////////////////////////
      
      // 파일의 정보 + 글 정보를 디비에 저장
@@ -45,6 +59,7 @@
      bb.setPw(multi.getParameter("pw"));
      bb.setSubject(multi.getParameter("subject"));
      bb.setContent(multi.getParameter("content"));
+     bb.setAddres(multi.getParameter("addres"));
      
      // 전달된 파일정보를 저장
      //bb.setFile(multi.getParameter("file"));(x)
@@ -64,12 +79,11 @@
      bdao.insertBoard(bb);
      
      // 목록페이지로 이동
-     response.sendRedirect("notice.jsp");
+     response.sendRedirect("notice.jsp/");
      
      
    
    %>
-   
 
 
 

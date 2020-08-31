@@ -8,7 +8,7 @@ public class BoardBean {
 	private String pw;
 	private String subject;
 	private String content;
-	private String addr;
+	private String addres;
 	private int readcount;
 	private int re_ref;
 	private int re_lev;
@@ -17,6 +17,7 @@ public class BoardBean {
 	private String file;
 	private String ip;
 	private String cmt;
+	private String file_name;
 	
 	
 	public int getBno() {
@@ -49,11 +50,11 @@ public class BoardBean {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getAddr() {
-		return addr;
+	public String getAddres() {
+		return addres;
 	}
-	public void setAddr(String addr) {
-		this.addr = addr;
+	public void setAddres(String addres) {
+		this.addres = addres;
 	}
 	public int getReadcount() {
 		return readcount;
@@ -96,19 +97,26 @@ public class BoardBean {
 	}
 	public void setIp(String ip) {
 		this.ip = ip;
-	}
+	}	
 	public String getCmt() {
 		return cmt;
 	}
 	public void setCmt(String cmt) {
 		this.cmt = cmt;
 	}
-	
+	public String getFile_name() {
+		return file_name;
+	}
+	public void setFile_name(String file_name) {
+		this.file_name = file_name;
+	}
 	@Override
 	public String toString() {
-		return "BaordBean [bno=" + bno + ", name=" + name + ", pw=" + pw + ", subject=" + subject + ", content="
-				+ content + ", addr=" + addr + ", readcount=" + readcount + ", re_ref=" + re_ref + ", re_lev=" + re_lev + ", re_seq="
-				+ re_seq + ", date=" + date + ", file=" + file + ", ip=" + ip + ", cmt=" + cmt +"]";
+		return "BoardBean [bno=" + bno + ", name=" + name + ", pw=" + pw + ", subject=" + subject + ", content="
+				+ content + ", addres=" + addres + ", readcount=" + readcount + ", re_ref=" + re_ref + ", re_lev="
+				+ re_lev + ", re_seq=" + re_seq + ", date=" + date + ", file=" + file + ", ip=" + ip + ", cmt=" + cmt
+				+ ", file_name=" + file_name + "]";
 	}
+	
 
 }

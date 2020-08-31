@@ -52,7 +52,6 @@ ImageIO.write(thumb, "jpg", thumbnailFile);
 ImageIO.write(thumb, "png", thumbnailFile);
 ImageIO.write(thumb, "gif", thumbnailFile);
 
-
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
