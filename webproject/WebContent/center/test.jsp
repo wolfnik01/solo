@@ -78,7 +78,7 @@
 	 	<input type="hidden" name="name" value="<%=name%>">
 		<input id="fwbtn" type="file" name="file"><br>
 		</div>
-			<div id="summernote"></div>
+			<div id="summernote" >
 
 			<!-- <form method="post">
   <textarea id="summernote" name="content"></textarea>
@@ -98,7 +98,7 @@
 				});
 			</script>
 			
-			
+			</div>
 		
 			<div id="table_search">
 				<input type="submit" value="글쓰기" class="btn">

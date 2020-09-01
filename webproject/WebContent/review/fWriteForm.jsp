@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>오늘 뭐먹지?</title>
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/subpage.css" rel="stylesheet" type="text/css">
 <link href="../css/top.css" rel="stylesheet" type="text/css">
@@ -72,7 +72,7 @@
 	   주소 : <input type="text" id="sample5_address" name="addr" placeholder="주소">
 <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
 <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
-	   이미지 : <input type="file" name="file"><br>
+ 이미지 : <input type="file" name="file"><br>
 	   
 	  <input type="submit" value="등록">	
 	</form>

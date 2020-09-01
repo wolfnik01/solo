@@ -1,16 +1,127 @@
-﻿//Summernote WYSIWYG  editor ucun Azerbaycan dili fayli
+/*!
+ * 
+ * Super simple wysiwyg editor v0.8.18
+ * https://summernote.org
+ * 
+ * 
+ * Copyright 2013- Alan Hong. and other contributors
+ * summernote may be freely distributed under the MIT license.
+ * 
+ * Date: 2020-05-20T18:09Z
+ * 
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 8:
+/***/ (function(module, exports) {
+
+//Summernote WYSIWYG  editor ucun Azerbaycan dili fayli
 //Tercume etdi: RAMIL ALIYEV
 //Tarix: 20.07.2019
 //Baki Azerbaycan
 //Website: https://ramilaliyev.com
-
 //Azerbaijan language for Summernote WYSIWYG 
 //Translated by: RAMIL ALIYEV
 //Date: 20.07.2019
 //Baku Azerbaijan
 //Website: https://ramilaliyev.com
-
-(function($) {
+(function ($) {
   $.extend($.summernote.lang, {
     'az-AZ': {
       font: {
@@ -23,7 +134,7 @@
         strikethrough: 'Üstü xətli',
         subscript: 'Alt simvol',
         superscript: 'Üst simvol',
-        size: 'Yazı ölçüsü',
+        size: 'Yazı ölçüsü'
       },
       image: {
         image: 'Şəkil',
@@ -45,14 +156,14 @@
         maximumFileSizeError: 'Maksimum sənəd ölçüsünü keçdiniz.',
         url: 'Şəkil linki',
         remove: 'Şəkli sil',
-        original: 'Original',
+        original: 'Original'
       },
       video: {
         video: 'Video',
         videoLink: 'Video linki',
         insert: 'Video əlavə et',
         url: 'Video linki?',
-        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion və ya Youku)',
+        providers: '(YouTube, Vimeo, Vine, Instagram, DailyMotion və ya Youku)'
       },
       link: {
         link: 'Link',
@@ -61,7 +172,7 @@
         edit: 'Linkə düzəliş et',
         textToDisplay: 'Ekranda göstəriləcək link adı',
         url: 'Link ünvanı?',
-        openInNewWindow: 'Yeni pəncərədə aç',
+        openInNewWindow: 'Yeni pəncərədə aç'
       },
       table: {
         table: 'Cədvəl',
@@ -71,10 +182,10 @@
         addColRight: 'Sağa sütun əlavə et',
         delRow: 'Sətiri sil',
         delCol: 'Sütunu sil',
-        delTable: 'Cədvəli sil',
+        delTable: 'Cədvəli sil'
       },
       hr: {
-        insert: 'Üfuqi xətt əlavə et',
+        insert: 'Üfuqi xətt əlavə et'
       },
       style: {
         style: 'Stil',
@@ -86,16 +197,16 @@
         h3: 'Başlıq 3',
         h4: 'Başlıq 4',
         h5: 'Başlıq 5',
-        h6: 'Başlıq 6',
+        h6: 'Başlıq 6'
       },
       lists: {
         unordered: 'Nizamsız sıra',
-        ordered: 'Nizamlı sıra',
+        ordered: 'Nizamlı sıra'
       },
       options: {
         help: 'Kömək',
         fullscreen: 'Tam ekran',
-        codeview: 'HTML Kodu',
+        codeview: 'HTML Kodu'
       },
       paragraph: {
         paragraph: 'Paraqraf',
@@ -104,7 +215,7 @@
         left: 'Sola çək',
         center: 'Ortaya çək',
         right: 'Sağa çək',
-        justify: 'Sola və sağa çək',
+        justify: 'Sola və sağa çək'
       },
       color: {
         recent: 'Son rənk',
@@ -114,7 +225,7 @@
         transparent: 'Şəffaflıq',
         setTransparent: 'Şəffaflığı nizamla',
         reset: 'Sıfırla',
-        resetToDefault: 'Susyama görə sıfırla',
+        resetToDefault: 'Susyama görə sıfırla'
       },
       shortcut: {
         shortcuts: 'Qısayollar',
@@ -123,7 +234,7 @@
         action: 'Hadisə',
         paragraphFormatting: 'Paraqraf formatlandırmaq',
         documentStyle: 'Sənəd stili',
-        extraKeys: 'Əlavə',
+        extraKeys: 'Əlavə'
       },
       help: {
         'insertParagraph': 'Paraqraf əlavə etmək',
@@ -152,16 +263,21 @@
         'formatH5': 'Aktiv bloqun formatını başlıq 5 (h5) olaraq dəyişdirir',
         'formatH6': 'Aktiv bloqun formatını başlıq 6 (h6) olaraq dəyişdirir',
         'insertHorizontalRule': 'Üfuqi xətt əlavə edir',
-        'linkDialog.show': 'Link parametrləri qutusunu göstərir',
+        'linkDialog.show': 'Link parametrləri qutusunu göstərir'
       },
       history: {
         undo: 'Əvvəlki vəziyyət',
-        redo: 'Sonrakı vəziyyət',
+        redo: 'Sonrakı vəziyyət'
       },
       specialChar: {
         specialChar: 'Xüsusi simvollar',
-        select: 'Xüsusi simvolları seçin',
-      },
-    },
+        select: 'Xüsusi simvolları seçin'
+      }
+    }
   });
 })(jQuery);
+
+/***/ })
+
+/******/ });
+});

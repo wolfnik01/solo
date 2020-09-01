@@ -91,10 +91,10 @@ public class BoardDAO {
 				// (2) 글정보 저장
 				// sql
 				sql = "insert into solo_review (bno,name,pw,subject,content,"
-						+ "readcount,re_ref,re_seq,re_lev,date,ip,file) "
+						+ "readcount,re_ref,re_seq,re_lev,date,ip,file,addr) "
 						+ "values(?,?,?,?,?,"
 						+ "?,?,?,?,now(),"
-						+ "?,?)";
+						+ "?,?,?)";
 				
 				pstmt = con.prepareStatement(sql);
 
@@ -108,7 +108,8 @@ public class BoardDAO {
 				pstmt.setInt(8, 0); // re_lev 일반글 0
 				pstmt.setInt(9, 0); // re_seq 일반글 0
 				pstmt.setString(10, bb.getIp());
-				pstmt.setString(11, bb.getFile());				
+				pstmt.setString(11, bb.getFile());		
+				pstmt.setString(12, bb.getAddr());
 				
 				// 실행
 				pstmt.executeUpdate();
