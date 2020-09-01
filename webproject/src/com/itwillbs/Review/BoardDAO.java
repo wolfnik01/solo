@@ -91,11 +91,10 @@ public class BoardDAO {
 				// (2) 글정보 저장
 				// sql
 				sql = "insert into solo_review (bno,name,pw,subject,content,"
-						+ "readcount,re_ref,re_seq,re_lev,date,ip,file,addr) "
+						+ "addres,readcount,re_ref,re_lev,re_seq,date,ip,file) "
 						+ "values(?,?,?,?,?,"
-						+ "?,?,?,?,now(),"
-						+ "?,?,?)";
-				
+						+ "?,?,?,?,?,now(),"
+						+ "?,?)";
 				pstmt = con.prepareStatement(sql);
 
 				pstmt.setInt(1, num);
@@ -103,14 +102,13 @@ public class BoardDAO {
 				pstmt.setString(3, bb.getPw());
 				pstmt.setString(4, bb.getSubject());
 				pstmt.setString(5, bb.getContent());
-				pstmt.setInt(6, 0); // readcount
-				pstmt.setInt(7, num); // re_ref (답글 그룹번호 == 글번호)
-				pstmt.setInt(8, 0); // re_lev 일반글 0
-				pstmt.setInt(9, 0); // re_seq 일반글 0
-				pstmt.setString(10, bb.getIp());
-				pstmt.setString(11, bb.getFile());		
-				pstmt.setString(12, bb.getAddr());
-				
+				pstmt.setString(6, bb.getAddres());
+				pstmt.setInt(7, 0); // readcount
+				pstmt.setInt(8, num); // re_ref (답글 그룹번호 == 글번호)
+				pstmt.setInt(9, 0); // re_lev 일반글 0
+				pstmt.setInt(10, 0); // re_seq 일반글 0
+				pstmt.setString(11, bb.getIp());
+				pstmt.setString(12, bb.getFile());					
 				// 실행
 				pstmt.executeUpdate();
 				
@@ -191,6 +189,7 @@ public class BoardDAO {
 					bb.setContent(rs.getString("content"));
 					bb.setDate(rs.getDate("date"));
 					bb.setFile(rs.getString("file"));
+					bb.setAddres(rs.getString("addres"));
 					bb.setIp(rs.getString("ip"));
 					bb.setName(rs.getString("name"));
 					bb.setPw(rs.getString("pw"));
@@ -258,6 +257,7 @@ public class BoardDAO {
 					bb.setRe_seq(rs.getInt("re_seq"));
 					bb.setReadcount(rs.getInt("readcount"));
 					bb.setSubject(rs.getString("subject"));
+					bb.setAddres(rs.getString("addres"));
 
 					// 글 하나의 정보를 arrayList 한칸에 저장
 					boardList.add(bb);
@@ -342,6 +342,7 @@ public class BoardDAO {
 					bb.setRe_seq(rs.getInt("re_seq"));
 					bb.setReadcount(rs.getInt("readcount"));
 					bb.setSubject(rs.getString("subject"));
+					bb.setAddres(rs.getString("addres"));
 
 				}// if
 				// 글정보 저장 완료
@@ -505,7 +506,7 @@ public class BoardDAO {
 				sql="insert into solo_review "
 						+ "values(?,?,?,?,?"
 						+ ",?,?,?,?,now()"
-						+ ",?,?)";
+						+ ",?,?,?)";
 				
 				pstmt = con.prepareStatement(sql);
 				pstmt.setInt(1, num); // 계산한 글번호저장
@@ -513,12 +514,14 @@ public class BoardDAO {
 				pstmt.setString(3, bb.getPw());
 				pstmt.setString(4, bb.getSubject());
 				pstmt.setString(5, bb.getContent());
-				pstmt.setInt(6, bb.getReadcount());
-				pstmt.setInt(7, bb.getRe_ref()); //기존 원글의 그룹번호와 동일
-				pstmt.setInt(8, bb.getRe_lev()+1); // 기존의 값 + 1
-				pstmt.setInt(9, bb.getRe_seq()+1); // 기존의 값 + 1
-				pstmt.setString(10, bb.getFile());
-				pstmt.setString(11, bb.getIp());
+				pstmt.setString(6, bb.getAddres());
+				pstmt.setInt(7, bb.getReadcount());
+				pstmt.setInt(8, bb.getRe_ref()); //기존 원글의 그룹번호와 동일
+				pstmt.setInt(9, bb.getRe_lev()+1); // 기존의 값 + 1
+				pstmt.setInt(10, bb.getRe_seq()+1); // 기존의 값 + 1
+				pstmt.setString(11, bb.getFile());
+				pstmt.setString(12, bb.getIp());
+				
 				
 				// 실행
 				pstmt.executeUpdate();

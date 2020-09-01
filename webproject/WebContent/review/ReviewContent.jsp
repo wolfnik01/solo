@@ -34,7 +34,7 @@
 		<!-- 왼쪽메뉴 -->
 		<nav id="sub_menu">
 			<ul>
-				<li><a href="test.jsp">글쓰기</a></li>
+				<li><a href="fWriteForm.jsp">글쓰기</a></li>
 				<li><a href="notice.jsp">글 목록 보기</a></li>
 				<li><a href="#">파일 업로드/다운로드</a></li>
 				<li><a href="#">Service Policy</a></li>
@@ -43,6 +43,10 @@
 		<!-- 왼쪽메뉴 -->
 
 		<%
+		
+		
+		String filename = request.getParameter("filename");
+		String ofilename = request.getParameter("ofilename");
 			// http://localhost:8088/JSP7/board/content.jsp?bno=20&pageNum=1
 			// 글번호(pk)에 해당하는 글의 정보를 가져오기
 
@@ -61,6 +65,7 @@
 			BoardBean bb = bdao.getBoard(bno);
 
 			// 화면(테이블)에 출력
+			
 		%>
 
 		<!-- 게시판 -->
@@ -73,7 +78,7 @@
 
 			<table>
 				<tr>
-					<td class="ssimg"><img src="d:\\upfile\\<%=bb.getFile()%>"></td>
+					<td class="ssimg"><img src="../upfile/<%= bb.getFile() %>" width="200px" ></td>
 				</tr>
 				<tr>
 					<td class="rvn"><%=bb.getName()%></td>
@@ -85,7 +90,7 @@
 					<td class="rvrc"><%=bb.getReadcount()%></td>
 				</tr>
 				<tr>
-					<td class="rvar"><%=bb.getAddr()%></td>
+					<td class="rvar"><%=bb.getAddres()%></td>
 				</tr>
 			</table>
 

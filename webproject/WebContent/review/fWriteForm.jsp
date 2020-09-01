@@ -50,8 +50,6 @@
 	if(id.equals("admin")){
 	
 	%>
-	
-	
     <%
       // p305 파일 업로드
       
@@ -69,7 +67,7 @@
 	   매장이름 : <input type="text" name="subject"><br>
 	   매장정보 : <br> 
 	   <textarea rows="10" cols="25" name="content"></textarea><br>
-	   주소 : <input type="text" id="sample5_address" name="addr" placeholder="주소">
+	   주소 : <input type="text" id="sample5_address" name="addres"  placeholder="주소">
 <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
 <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
  이미지 : <input type="file" name="file"><br>

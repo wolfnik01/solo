@@ -115,7 +115,7 @@
 
 <table id="ssum">   
 <tr>
-<td class="ssimg"><img src="d:\\upfile\\<%= bb.getFile() %>"></td>
+<td class="ssimg"><img src="../upfile/<%= bb.getFile() %>" width="50px" ></td>
 </tr>
 <tr>
 		<td class="rvsj">
