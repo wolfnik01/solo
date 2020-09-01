@@ -32,13 +32,17 @@
 <article id="front">
 <div id="solution">
 <div id="hosting">
+<table>
 ????
+</table>
 </div>
 <div id="security">
 여기는 어때 정보통
 </div>
 <div id="payment">
-???
+<table>
+????
+</table>
 </div>
 </div>
 <div class="clear"></div>
@@ -47,9 +51,7 @@
 </div>
 <div id="news_notice">
 <h3 class="brown">News &amp; Notice</h3>
-<table>
-????
-</table>
+
 </div>
 </article>
 <!-- 메인 콘텐츠 들어가는 곳 -->

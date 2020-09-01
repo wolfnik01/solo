@@ -35,7 +35,6 @@
 <ul>
 <li><a href="#">글쓰기</a></li>
 <li><a href="notice.jsp">글 목록 보기</a></li>
-<li><a href="#">파일 업로드/다운로드</a></li>
 <li><a href="#">Service Policy</a></li>
 </ul>
 </nav>
@@ -47,30 +46,28 @@
 	<%
 	
 	String id = (String)session.getAttribute("id");
-	if(id.equals("admin")){
-	
+	String pw = (String)session.getAttribute("pw");
+	if(id == null){
+		%>
+		<script type="text/javascript">
+			alert("관리자만 작성가능합니다.")
+			location.href="../member/loginForm.jsp";
+		</script>		
+		<%
+	} else if(id.equals("admin")){
 	%>
-    <%
-      // p305 파일 업로드
-      
-      // 1. cos.jar 라이브러리 파일 설치
-      // 2. 폼태그 속성 enctype="multipart/form-data", post
-      // 3. D:/upfile 폴더 직접 생성       
-      
-    
-    
-    %>
    <fieldset>
 	<form class="rvf" action="fWritePro.jsp" method="post" enctype="multipart/form-data">
 	  
 	   작성자 : <input type="text" name="name" value="<%= id%>"> <br>
+	   작성자 : <input type="text" name="pw" value="<%= pw%>"> <br>
 	   매장이름 : <input type="text" name="subject"><br>
 	   매장정보 : <br> 
 	   <textarea rows="10" cols="25" name="content"></textarea><br>
 	   주소 : <input type="text" id="sample5_address" name="addres"  placeholder="주소">
 <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
 <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
- 이미지 : <input type="file" name="file"><br>
+ 이미지 : <input type="file" name="file" width="300" height="300" ><br>
 	   
 	  <input type="submit" value="등록">	
 	</form>
@@ -78,12 +75,13 @@
    
    <%
 	} else {
-	%>
-	<script type="text/javascript">
-		alert("관리자만 작성가능합니다.")
-		location.href="../member/loginForm.jsp";
-	</script>		
-	<%	
+		%>
+		<script type="text/javascript">
+			alert("관리자만 작성가능합니다.")
+			location.href="../review/notice.jsp";
+		</script>
+		<%
+		
 	}
 	%>
 
