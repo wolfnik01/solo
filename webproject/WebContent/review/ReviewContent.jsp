@@ -49,21 +49,15 @@
 		String ofilename = request.getParameter("ofilename");
 			// http://localhost:8088/JSP7/board/content.jsp?bno=20&pageNum=1
 			// 글번호(pk)에 해당하는 글의 정보를 가져오기
-
 			// 전달된 데이터 저장 (bno,pageNum)
 			int bno = Integer.parseInt(request.getParameter("bno"));
 			String pageNum = request.getParameter("pageNum");
 			// BoardDAO 객체 생성 
-
 			BoardDAO bdao = new BoardDAO();
-
 			// 글의 조회수 정보를 1증가 ( updateReadCount(bno) )
-
 			bdao.updateReadCount(bno);
-
 			// 글정보를 가져오는 메서드 생성( getBoard(bno) )
 			BoardBean bb = bdao.getBoard(bno);
-
 			// 화면(테이블)에 출력
 			
 		%>
@@ -75,24 +69,59 @@
 					<th colspan="2"><%=bb.getSubject()%></th>
 				</tr>
 			</table>
-
-			<table>
+			<table class="rvcon">
+			<tr>
+				<td class="ulli">
+					<ul>
+						<li>조회수 | <%=bb.getReadcount()%></li>
+						<li>작성자 | <%=bb.getName()%></li>
+						<li>작성날짜 | <%=bb.getDate()%></li>
+					</ul>
+				</td>
+				</tr>
 				<tr>
 					<td class="ssimg"><img src="../upfile/<%= bb.getFile() %>" width="200px" ></td>
-				</tr>
-				<tr>
-					<td class="rvn"><%=bb.getName()%></td>
-				</tr>
-				<tr>
-					<td class="rvda"><%=bb.getDate()%></td>
-				</tr>
-				<tr>
-					<td class="rvrc"><%=bb.getReadcount()%></td>
 				</tr>
 				<tr>
 					<td class="rvar"><%=bb.getAddres()%></td>
 				</tr>
 			</table>
+			
+
+<div id="map" style="width:100%;height:350px;"></div>
+
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0c12e6108eceda4edea2a47f4f8b4682&libraries=services"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch('<%=bb.getAddres()%>', function(result, status) {
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;"><%=bb.getSubject()%></div>'
+        });
+        infowindow.open(map, marker);
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
+</script>
 
 
 
@@ -107,7 +136,6 @@
  	// 로그인정보를 가져와서 판단 
  	// 세션값 가져오기
  	String id = (String) session.getAttribute("id");
-
  	if (id != null && id.equals(bb.getName())) {
  		// 아이디가 있으면서, 이름이랑 아이디가 같은경우
  %> <input type="button" value="수정"
@@ -118,33 +146,13 @@
 
 						<%
 							}
-						%> 
+						%>
 						<input type="button" value="목록"
 						onclick="location.href='notice.jsp?pageNum=<%=pageNum%>'">
 					</td>
 				</tr>
 
 			</table>
-
-			<form action="">
-				<table>
-					<tr>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>
-						<input type="text" name="cmt" value="<%=bb.getName()%>">
-						</td>
-						<td>
-						<textarea></textarea>
-						</td>
-					</tr>
-				</table>
-			</form>
-
-
-
 		</article>
 		<!-- 게시판 -->
 		<!-- 본문들어가는 곳 -->
@@ -154,52 +162,4 @@
 		<!-- 푸터들어가는 곳 -->
 	</div>
 </body>
-<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0c12e6108eceda4edea2a47f4f8b4682&libraries=services"></script>
-<script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-        mapOption = {
-            center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
-            level: 5 // 지도의 확대 레벨
-        };
-
-    //지도를 미리 생성
-    var map = new daum.maps.Map(mapContainer, mapOption);
-    //주소-좌표 변환 객체를 생성
-    var geocoder = new daum.maps.services.Geocoder();
-    //마커를 미리 생성
-    var marker = new daum.maps.Marker({
-        position: new daum.maps.LatLng(37.537187, 127.005476),
-        map: map
-    });
-
-
-    function sample5_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                var addr = data.address; // 최종 주소 변수
-
-                // 주소 정보를 해당 필드에 넣는다.
-                document.getElementById("sample5_address").value = addr;
-                // 주소로 상세 정보를 검색
-                geocoder.addressSearch(data.address, function(results, status) {
-                    // 정상적으로 검색이 완료됐으면
-                    if (status === daum.maps.services.Status.OK) {
-
-                        var result = results[0]; //첫번째 결과의 값을 활용
-
-                        // 해당 주소에 대한 좌표를 받아서
-                        var coords = new daum.maps.LatLng(result.y, result.x);
-                        // 지도를 보여준다.
-                        mapContainer.style.display = "block";
-                        map.relayout();
-                        // 지도 중심을 변경한다.
-                        map.setCenter(coords);
-                        // 마커를 결과값으로 받은 위치로 옮긴다.
-                        marker.setPosition(coords)
-                    }
-                });
-            }
-        }).open();
-    }
 </html>

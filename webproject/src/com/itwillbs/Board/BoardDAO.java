@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class BoardDAO {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	String sql = "";
+	Statement st = null;
 	
 	// 1,2단계 DB, 드라이버 로드/연결(커넥션 풀)
 		private Connection getCon() throws Exception {
@@ -533,5 +535,52 @@ public class BoardDAO {
 			
 		}	
 		// reInsertBoard(bb)
+		
+		// memberSelect
+		 public ArrayList<BoardBean> getMemberlist(String keyField, String keyWord){
+		       
+		        ArrayList<BoardBean> list = new ArrayList<BoardBean>();
+		       
+		        try{//실행
+		           
+		            String sql ="select * from solo_board ";
+		           
+		            if(keyWord != null && !keyWord.equals("") ){
+		                sql +="WHERE "+keyField.trim()+" LIKE '%"+keyWord.trim()+"%' order by n";
+		            }else{//모든 레코드 검색
+		                sql +="order by name";
+		            }
+		            System.out.println("sql = " + sql);
+		            st = con.createStatement();
+		            rs = st.executeQuery(sql);
+		           
+		            while(rs.next()){
+		                BoardBean bb = new BoardBean();
+		               
+		                bb.setName(rs.getString(1));
+		                bb.setPw(rs.getString(2));
+		                bb.setName(rs.getString(3));
+		                bb.setContent(rs.getString(4));
+		                bb.setFile(rs.getString(5));
+		                bb.setSubject(rs.getString(6));
+		                bb.setBno(rs.getInt(7));
+		                bb.setIp(rs.getString(8));
+		                bb.setReadcount(rs.getInt(9));
+		                bb.setRe_lev(rs.getInt(10));
+		                bb.setRe_ref(rs.getInt(11));
+		                bb.setRe_seq(rs.getInt(12));
+		                bb.setDate(rs.getDate(13));
+		                
+		               
+		                list.add(bb);
+		            }
+		        }catch(Exception e){           
+		            System.out.println(e+"=> getMemberlist fail");         
+		        }finally{          
+		            CloseDB();;
+		        }      
+		        return list;
+		    }
+		// memberSelect
 
 }

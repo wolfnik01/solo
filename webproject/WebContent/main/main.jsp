@@ -25,37 +25,21 @@
 <!-- 헤더파일들어가는 곳 (페이지 인클루드) -->
 	<jsp:include page="../inc/header.jsp" />
 <!-- 헤더파일들어가는 곳 -->
+
 <div id="wrap">
 <!-- 메인이미지 들어가는곳 -->
 <div class="clear"></div>
+<div id="main_img"></div>
+<!-- 메인이미지 들어가는곳 -->
+<!-- 리뷰들어가는 곳 -->
+<jsp:include page="../inc/review.jsp"/>
+<!-- 리뷰들어가는 곳 -->
+<!-- 메인 콘텐츠 들어가는 곳 -->
 
-<article id="front">
-<div id="solution">
-<div id="hosting">
-<table>
-????
-</table>
-</div>
-<div id="security">
-여기는 어때 정보통
-</div>
-<div id="payment">
-<table>
-????
-</table>
-</div>
-</div>
-<div class="clear"></div>
-<div id="sec_news">
- 맛집평가표
-</div>
-<div id="news_notice">
-<h3 class="brown">News &amp; Notice</h3>
 
-</div>
-</article>
 <!-- 메인 콘텐츠 들어가는 곳 -->
 <div class="clear"></div>
+
 <!-- 푸터 들어가는 곳 -->
  <jsp:include page="../inc/bottom.jsp" />
 <!-- 푸터 들어가는 곳 -->

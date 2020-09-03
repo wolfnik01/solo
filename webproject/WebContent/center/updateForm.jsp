@@ -13,6 +13,8 @@
 	<h1> 글정보 수정하기 </h1>
 	
 	<%
+	
+	request.setCharacterEncoding("UTF-8");
 	   // 전달된 파라미터값 저장(bno,pageNum)
 	   int bno = Integer.parseInt(request.getParameter("bno"));
 	   String pageNum = request.getParameter("pageNum");

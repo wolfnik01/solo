@@ -55,7 +55,7 @@ background-position: left top;}
 /*너비 971 높이179 
 배경이미지 images/center/sub_back.png
 반복 no 위치left top */
-article table#notice{width: 670px;
+article table#notice{width: 660px;
 border-collapse: collapse;}
 /*너비 670 테이블공간없애기*/
 @font-face{font-family: "seo";
@@ -96,13 +96,19 @@ article th.tread{width: 50px;
 border-top-right-radius:5px;
 border-bottom-right-radius:5px;}
 
-article th.tttt{width: 670px;
+article th.tttt{width: 660px;
 border-radius:5px;}
 /*너비 50px 
 오른쪽위 둥글게5px 오른쪽아래 둥글게5px*/
 
+article.polist {
+	padding: 0;
+	
+}
+
 article #ssum{
-	width: 30%;
+	width: 31.9%;
+	height: 200px;
 	border: 1px solid #333;
 	margin: 5px;
 	float: left;
@@ -126,19 +132,36 @@ article table#ssum.ssimg{
 article table#ssum.rvn{
 	width: 30px;
 	height: 200px;
-	padding: 20;
+	padding: 20px;
 }
 
-article table#ssum.rvsj.left{
-	width: 140px;
-	height: 200px;
-	padding: 20;
+article table#ssum .rvsj .tt{
+	display: block;
+	text-align:	center;
+	
 }
+
+.rvcon {
+	width: 100%;
+}
+
+.rvcon ul li {
+	float:left; 
+	margin-left:10px;
+	list-style: none;
+	 }
+	 
+.rvcon .ulli {
+	text-align: right;
+	width: 100%;
+}
+
+.rvcon ul{float: right;}
 
 article table#ssum.rvrc{
 	width: 30px;
 	height: 200px;
-	padding: 20;
+	padding: 20px;
 }
 
 article table#ssum.rvar{
@@ -247,6 +270,45 @@ color: #fff;
 	font-size: 23px;
 	border-radius: 3px;
 }
+
+#notice.noti2 tr td:first-child{
+	background-color: #d5f1ff;
+	text-align: left;
+	padding-left: 20px;
+	color: #6d6d6d;	
+}
+
+#notice.noti2 tr td:nth-child(2){
+	padding:6px 10px;
+	}
+
+#notice.noti2 td textarea {
+	width: 100%;
+	height: 100%;
+	border-color: #d2d2d2;
+}
+
+#notice.noti2 tr td:nth-child(2) input{
+	border: 1px solid #d2d2d2;
+	width: 100%;
+	height: 100%;
+}
+
+.notice .TC td {
+	width: 100%;
+	height: 200px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid #d2d2d2;
+	padding: 20px;
+}
+
+.notice {
+	width: 100%;
+	margin-bottom: 1em;
+	
+}
+
 
 
 

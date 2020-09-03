@@ -387,14 +387,18 @@ public class BoardDAO {
 						// 비밀번호 비교(수정할때 저장한 비밀번호/디비저장된 비밀번호)
 					    // 데이터 수정	
 						// sql
-						sql ="update solo_review set name=?,subject=?,content=? "
+						sql ="update solo_review set name=?,pw=?,subject=?,content=?,addres=?,file=? "
 								+ "where bno=?";
 						pstmt = con.prepareStatement(sql);
 						
 						pstmt.setString(1, bb.getName());
-						pstmt.setString(2, bb.getSubject());
-						pstmt.setString(3, bb.getContent());
-						pstmt.setInt(4, bb.getBno());
+						pstmt.setString(2, bb.getPw());
+						pstmt.setString(3, bb.getSubject());
+						pstmt.setString(4, bb.getContent());
+						pstmt.setString(5, bb.getAddres());
+						pstmt.setString(6, bb.getFile());
+						pstmt.setInt(7, bb.getBno());
+						
 						
 						pstmt.executeUpdate();
 						
@@ -537,5 +541,52 @@ public class BoardDAO {
 			
 		}	
 		// reInsertBoard(bb)
+		
+		// reply(bb)
+				public void reply(BoardBean bb){
+					int num = 0;
+					try {
+						// DB연결
+						con = getCon();
+						
+						// sql(1) 글번호 계산
+						sql = "select max(bno) from solo_reply";
+						
+						pstmt = con.prepareStatement(sql);
+						
+						//실행
+						rs = pstmt.executeQuery();
+						
+						if(rs.next()){
+							num = rs.getInt(1)+1;
+						}
+						System.out.println("저장될 글번호 : " + num);
+						
+						// (2) 글정보 저장
+						// sql
+						sql = "insert into solo_review (bno,name,pw,content,date,ip) "
+								+ "values(?,?,?,?,now(),?)";
+						pstmt = con.prepareStatement(sql);
+
+						pstmt.setInt(1, num);
+						pstmt.setString(2, bb.getName());
+						pstmt.setString(3, bb.getPw());
+						pstmt.setString(4, bb.getContent());
+						pstmt.setString(5, bb.getIp());				
+						// 실행
+						pstmt.executeUpdate();
+						
+						System.out.println(num + "번 글쓰기 완료");
+						
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}finally {
+						CloseDB();
+					}
+					
+					
+				}
+		// reply(bb)
 
 }

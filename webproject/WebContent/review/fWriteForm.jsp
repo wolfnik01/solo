@@ -60,7 +60,7 @@
 	<form class="rvf" action="fWritePro.jsp" method="post" enctype="multipart/form-data">
 	  
 	   작성자 : <input type="text" name="name" value="<%= id%>"> <br>
-	   작성자 : <input type="text" name="pw" value="<%= pw%>"> <br>
+	   비밀번호 : <input type="password" name="pw"> <br>
 	   매장이름 : <input type="text" name="subject"><br>
 	   매장정보 : <br> 
 	   <textarea rows="10" cols="25" name="content"></textarea><br>

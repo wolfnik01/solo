@@ -73,7 +73,7 @@
      // 페이징 처리************************************************
      
      // 한 페이지에서  보여줄 글의 개수 설정
-     int pageSize = 10;
+     int pageSize = 6;
      // 현 페이지의 페이지값을 확인
      String pageNum = request.getParameter("pageNum");
      if(pageNum == null){ // 페이지 정보가 없을경우 항상 1페이지 
@@ -103,19 +103,21 @@
 %>
 
 <!-- 게시판 -->
-<article>
+<article class="polist">
 <table id="notice">
 <tr><th class="tttt">맛집정보</th>
     </tr>
 </table>
+<div>
 
 <% for(int i=0; i<boardList.size(); i++ ){ 
 	BoardBean bb = (BoardBean)boardList.get(i);
 %>
-
 <table id="ssum">   
 <tr>
-<td class="ssimg"><img src="../upfile/<%= bb.getFile() %>" width="50px" ></td>
+<td class="ssimg"><a class="tt" href="ReviewContent.jsp?bno=<%=bb.getBno()%>&pageNum=<%=pageNum%>">
+<img src="../upfile/<%= bb.getFile() %>" width="100%" height="100px"></td>
+</a>
 </tr>
 <tr>
 		<td class="rvsj">
@@ -126,12 +128,12 @@
 		        if(bb.getRe_lev()>0){
 		        	wid = 10 * bb.getRe_lev();
 		       %>
-		         <img class="left" src="../images/level.gif" width="<%=wid%>" height="15">
+		         <a class="tt" href="ReviewContent.jsp?bno=<%=bb.getBno()%>&pageNum=<%=pageNum%>"><img class="left" src="../images/level.gif" width="<%=wid%>" height="15">
 		         <img  class="left" src="../images/re.gif">
 		       <%
 		        }
 		       %>
-		         <a class="left" href="ReviewContent.jsp?bno=<%=bb.getBno()%>&pageNum=<%=pageNum%>"> 
+		         <a class="tt" href="ReviewContent.jsp?bno=<%=bb.getBno()%>&pageNum=<%=pageNum%>"> 
 		          <%=bb.getSubject() %>
 		         </a>
 		       </td>
@@ -146,8 +148,9 @@
 		<td class="rvrc"><%= bb.getReadcount() %></td>
 </tr>
 <% } %>
-</table>
 
+</table>
+</div>
 <div id="table_search">
 <input type="text" name="search" class="input_box">
 <input type="button" value="search" class="btn">

@@ -5,25 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="../script/main.js" defer></script>
+<script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
 
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/subpage.css" rel="stylesheet" type="text/css">
 <link href="../css/top.css" rel="stylesheet" type="text/css">
 
-<!--[if lt IE 9]>
-<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
-<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-<![endif]-->
-<!--[if IE 6]>
- <script src="../script/DD_belatedPNG_0.0.8a.js"></script>
- <script>
-   /* EXAMPLE */
-   DD_belatedPNG.fix('#wrap');
-   DD_belatedPNG.fix('#main_img');   
-
- </script>
- <![endif]-->
 </head>
 <body>
 <div id="wrap">
@@ -64,7 +52,17 @@ if(id == null){
 
 %>
 <form action="writePro.jsp" method="post" name="fr">
-<table id="notice">
+<table id="notice" class="noti2">
+ <colgroup>
+  <col width="15%">
+ <col width="*">
+</colgroup>
+ <tr>
+  <td>제목</td>
+  <td>
+   <input type="text" name="subject">   
+  </td>
+ </tr>
  <tr>
   <td>글쓴이</td>
   <td>
@@ -78,15 +76,9 @@ if(id == null){
   </td>
  </tr>
  <tr>
-  <td>제목</td>
-  <td>
-   <input type="text" name="subject">   
-  </td>
- </tr>
- <tr>
   <td>내용</td>
   <td>
-   <textarea rows="10" cols="20" name="content"></textarea>   
+   <textarea rows="20" cols="20" name="content"></textarea>   
   </td>
  </tr>
 </table>
