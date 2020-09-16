@@ -31,7 +31,7 @@
      // 페이징 처리************************************************
      
      // 한 페이지에서  보여줄 글의 개수 설정
-     int pageSize = 5;
+     int pageSize = 6;
      // 현 페이지의 페이지값을 확인
      String pageNum = request.getParameter("pageNum");
      if(pageNum == null){ // 페이지 정보가 없을경우 항상 1페이지 

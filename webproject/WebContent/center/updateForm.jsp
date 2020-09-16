@@ -7,10 +7,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script src="../script/main.js" defer></script>
+<script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
+
+<link href="../css/default.css" rel="stylesheet" type="text/css">
+<link href="../css/subpage.css" rel="stylesheet" type="text/css">
+<link href="../css/top.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h1>WebContent/board/updateForm.jsp</h1>
-	<h1> 글정보 수정하기 </h1>
+<div id="wrap">
+<!-- 헤더들어가는 곳 -->
+<jsp:include page="../inc/header.jsp"/>
+<!-- 헤더들어가는 곳 -->
+
+<!-- 본문들어가는 곳 -->
+<!-- 메인이미지 -->
+<div></div>
+<!-- 메인이미지 -->
+
+<!-- 왼쪽메뉴 -->
+<nav id="sub_menu">
+<ul>
+<li><a href="#">글쓰기</a></li>
+<li><a href="notice.jsp">글 목록 보기</a></li>
+<li><a href="#">파일 업로드/다운로드</a></li>
+<li><a href="#">Service Policy</a></li>
+</ul>
+</nav>
+<!-- 왼쪽메뉴 -->
+<article>
+	<h1> 글 수정하기 </h1>
 	
 	<%
 	
@@ -50,18 +76,52 @@
         
     --%>
 	
-	
+	<table id="notice" class="noti2">
 	<input type="hidden" name="bno" value="<%=bb.getBno()%>">	
-	 글쓴이  : <input type="text" name="name" value="<%=bb.getName()%>"> <br>
-	 비밀번호 : <input type="password" name="pw" ><br>
-	 제목 : <input type="text" name="subject" value="<%=bb.getSubject()%>"><br>
-	 내용 : <br>
-	 <textarea rows="10" cols="25" name="content" ><%=bb.getContent()%></textarea> <br><br><br>
-	 
-	 <input type="submit" value="수정하기">
-	<input type="reset" value="취소하기" onclick="location.href='notice.jsp'">
-	</form>
-	</fieldset>
+ <colgroup>
+  <col width="15%">
+ <col width="*">
+</colgroup>
+ <tr>
+  <td>제목</td>
+  <td>
+   <input type="text" name="subject" value="<%=bb.getSubject()%>">   
+  </td>
+ </tr>
+ <tr>
+  <td>글쓴이</td>
+  <td>
+   <input type="text" name="name" value="<%=bb.getName()%>" readonly>   
+  </td>
+ </tr>
+ <tr>
+  <td>비밀번호</td>
+  <td>
+   <input type="password" name="pw">   
+  </td>
+ </tr>
+ <tr>
+  <td>내용</td>
+  <td>
+   <textarea rows="20" cols="20" name="content"><%=bb.getContent()%></textarea>   
+  </td>
+ </tr>
+</table>
+<div id="table_search">
+<input type="submit" value="글쓰기" class="btn">
+</div>
+<div class="clear"></div>
+</form>
+<div id=""></div>
 
+</article>
+<!-- 게시판 -->
+<!-- 본문들어가는 곳 -->
+<div class="clear"></div>
+
+<!-- 푸터들어가는 곳 -->
+<jsp:include page="../inc/bottom.jsp" />
+<!-- 푸터들어가는 곳 -->
+</div>
 </body>
 </html>

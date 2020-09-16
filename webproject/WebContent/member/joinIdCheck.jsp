@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> WebContent/member/joinIdCheck.jsp</h1>
+	<h1>아이디중복확인</h1>
 
 	<%
 	// 중복체크 검사하기위해서 받아서 ID값 출력

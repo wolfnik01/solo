@@ -171,6 +171,11 @@ article table#ssum.rvar{
 }
 
 
+.div11 {
+	height: 100px;
+	clear: both;
+}
+
 article #table_search{margin: 15px 0 10px 0;
 float: right;}
 /*밖여백 15px 0 10px 0 정렬 right*/

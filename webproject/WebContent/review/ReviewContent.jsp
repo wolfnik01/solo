@@ -83,6 +83,9 @@
 					<td class="ssimg"><img src="../upfile/<%= bb.getFile() %>" width="200px" ></td>
 				</tr>
 				<tr>
+					<td><%= bb.getContent() %></td>
+				</tr>
+				<tr>
 					<td class="rvar"><%=bb.getAddres()%></td>
 				</tr>
 			</table>

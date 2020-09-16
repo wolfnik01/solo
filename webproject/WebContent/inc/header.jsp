@@ -51,7 +51,7 @@ if(id == null){
 
 <ul  class="top_menu" >
 	<li><a href="../review/notice.jsp">오늘 뭐먹지?</a></li>
-	<li><a href="../HotPlace/notice.jsp">오늘 뭐하지?</a></li>
+	<li><a href="../review2/notice.jsp">오늘 뭐하지?</a></li>
 	<li><a href="../center/notice.jsp">여기는 어때?</a></li>
 </ul>
 </div>
