@@ -12,7 +12,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import com.itwillbs.Review.BoardBean;
+import com.itwillbs.Review2.BoardBean;
 
 public class BoardDAO {
 	Connection con = null;
@@ -76,7 +76,7 @@ public class BoardDAO {
 				con = getCon();
 				
 				// sql(1) 글번호 계산
-				sql = "select max(bno) from solo_review";
+				sql = "select max(bno) from solo_review2";
 				
 				pstmt = con.prepareStatement(sql);
 				
@@ -90,7 +90,7 @@ public class BoardDAO {
 				
 				// (2) 글정보 저장
 				// sql
-				sql = "insert into solo_review (bno,name,pw,subject,content,"
+				sql = "insert into solo_review2 (bno,name,pw,subject,content,"
 						+ "addres,readcount,re_ref,re_lev,re_seq,date,ip,file) "
 						+ "values(?,?,?,?,?,"
 						+ "?,?,?,?,?,now(),"
@@ -136,7 +136,7 @@ public class BoardDAO {
 				con = getCon();
 				
 				// sql(글 개수 계산 - count()) & pstmt
-				sql = "select count(*) from solo_review";
+				sql = "select count(*) from solo_review2";
 				pstmt = con.prepareStatement(sql);
 				
 				// 실행
@@ -174,7 +174,7 @@ public class BoardDAO {
 				
 				// sql(전체 글 정보 모두를 저장) & pstmt
 				
-				sql = "select * from solo_review";
+				sql = "select * from solo_review2";
 				pstmt = con.prepareStatement(sql);
 				
 				// 실행 -> 정보 저장
@@ -227,7 +227,7 @@ public class BoardDAO {
 				// 데이터 짤라서 가져오기  limit 시작행-1,개수
 				// => 해당 위치부터 개수만큼 가져오기
 				
-				sql = "select * from solo_review "
+				sql = "select * from solo_review2 "
 						+ "order by re_ref desc,re_seq asc "
 						+ "limit ?,?";
 
@@ -284,7 +284,7 @@ public class BoardDAO {
 				getCon();
 				
 				// sql: 해당 글번호에 맞는 글에 조회수를 1증가  
-				sql = "update solo_review set readcount=readcount+1 "
+				sql = "update solo_review2 set readcount=readcount+1 "
 						+ "where bno=?";
 				pstmt = con.prepareStatement(sql);
 				
@@ -315,7 +315,7 @@ public class BoardDAO {
 				
 				// SQL작성 , pstmt 객체생성
 				// 글번호에 해당하는 모든 글의 정보를 가져오기(select)
-				sql = "select * from solo_review "
+				sql = "select * from solo_review2 "
 						+ "where bno=?";
 				// pstmt 객체
 				pstmt = con.prepareStatement(sql);
@@ -369,7 +369,7 @@ public class BoardDAO {
 				System.out.println("디비연결 완료");
 				// SQL - (select)글쓴사람 본인 확인 
 				// 글이 있는지 검색하는 sql 구문
-				sql = "select pw from solo_review where bno=?";
+				sql = "select pw from solo_review2 where bno=?";
 				pstmt = con.prepareStatement(sql);
 				System.out.println("pstmt 객체 생성 완료");
 				// ?
@@ -387,7 +387,7 @@ public class BoardDAO {
 						// 비밀번호 비교(수정할때 저장한 비밀번호/디비저장된 비밀번호)
 					    // 데이터 수정	
 						// sql
-						sql ="update solo_review set name=?,pw=?,subject=?,content=?,addres=?,file=? "
+						sql ="update solo_review2 set name=?,pw=?,subject=?,content=?,addres=?,file=? "
 								+ "where bno=?";
 						pstmt = con.prepareStatement(sql);
 						
@@ -433,7 +433,7 @@ public class BoardDAO {
 				// SQL & pstmt
 				// -> 삭제 하려고 하는 글이 있는지 판단
 				// -> 글이 있을경우 비밀번호 체크 삭제여부 판단
-				sql = "select pw from solo_review where bno=?";
+				sql = "select pw from solo_review2 where bno=?";
 				pstmt = con.prepareStatement(sql);
 				
 				pstmt.setInt(1, bno);
@@ -443,7 +443,7 @@ public class BoardDAO {
 				if(rs.next()){
 					if(pw.equals(rs.getString("pw"))){
 						// 글삭제
-						sql = "delete from solo_review where bno=?";
+						sql = "delete from solo_review2 where bno=?";
 						
 						pstmt = con.prepareStatement(sql);
 						pstmt.setInt(1, bno);
@@ -480,7 +480,7 @@ public class BoardDAO {
 				
 				/*************답글 번호 계산***************/
 				// sql작성(select-게시판의 글번호중 최대값 계산) & pstmt
-				sql = "select max(bno) from solo_review";
+				sql = "select max(bno) from solo_review2";
 				pstmt = con.prepareStatement(sql);
 				// 실행
 				rs = pstmt.executeQuery();
@@ -495,7 +495,7 @@ public class BoardDAO {
 				/*************답글 순서 재배치***************/
 				// re_ref (같은 그룹 기준) re_seq 값이 기존의 값보다 큰게 있을경우
 				// re_seq 값을 1증가
-				sql = "update solo_review set re_seq=re_seq+1 "
+				sql = "update solo_review2 set re_seq=re_seq+1 "
 						+ "where re_ref=? and re_seq=?";
 				pstmt = con.prepareStatement(sql);
 				
@@ -507,7 +507,7 @@ public class BoardDAO {
 				/***************************************/
 				
 			    /*************답글 추가 동작***************/
-				sql="insert into solo_review "
+				sql="insert into solo_review2 "
 						+ "values(?,?,?,?,?"
 						+ ",?,?,?,?,now()"
 						+ ",?,?,?)";
@@ -564,7 +564,7 @@ public class BoardDAO {
 						
 						// (2) 글정보 저장
 						// sql
-						sql = "insert into solo_review (bno,name,pw,content,date,ip) "
+						sql = "insert into solo_review2 (bno,name,pw,content,date,ip) "
 								+ "values(?,?,?,?,now(),?)";
 						pstmt = con.prepareStatement(sql);
 

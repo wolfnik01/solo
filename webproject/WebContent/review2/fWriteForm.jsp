@@ -7,17 +7,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>오늘 뭐먹지?</title>
-<link href="../css/default.css" rel="stylesheet" type="text/css">
-<link href="../css/subpage.css" rel="stylesheet" type="text/css">
-<link href="../css/top.css" rel="stylesheet" type="text/css">
-
 <script src="../script/main.js" defer></script>
 <script src="https://kit.fontawesome.com/3a52ba898d.js" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="./js/jquery-3.1.0.min.js" charset="utf-8"></script>
-<script type="text/javascript">
-
-</script>
+<link href="../css/default.css" rel="stylesheet" type="text/css">
+<link href="../css/subpage.css" rel="stylesheet" type="text/css">
+<link href="../css/top.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="wrap">
@@ -41,8 +37,8 @@
 <!-- 왼쪽메뉴 -->
 
 <!-- 게시판 -->
-<article>
-	<h1>리뷰등록</h1>
+<article >
+<h1>리뷰등록</h1>
 	<%
 	
 	String id = (String)session.getAttribute("id");
@@ -56,23 +52,62 @@
 		<%
 	} else if(id.equals("admin")){
 	%>
-   <fieldset>
-	<form class="rvf" action="fWritePro.jsp" method="post" enctype="multipart/form-data">
-	  
-	   작성자 : <input type="text" name="name" value="<%= id%>"> <br>
-	   비밀번호 : <input type="password" name="pw"> <br>
-	   매장이름 : <input type="text" name="subject"><br>
-	   매장정보 : <br> 
-	   <textarea rows="10" cols="25" name="content"></textarea><br>
-	   주소 : <input type="text" id="sample5_address" name="addres"  placeholder="주소">
-<input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
+
+
+
+<form action="fWritePro.jsp" method="post" name="fr" enctype="multipart/form-data">
+<table id="notice" class="noti2">
+ <colgroup>
+  <col width="15%">
+ <col width="*">
+</colgroup>
+ <tr>
+  <td>여행지이름</td>
+  <td>
+   <input type="text" name="subject">   
+  </td>
+ </tr>
+ <tr>
+  <td>작성자</td>
+  <td>
+   <input type="text" name="name" value="<%= id%>">   
+  </td>
+ </tr>
+ <tr>
+  <td>비밀번호</td>
+  <td>
+   <input type="password" name="pw">   
+  </td>
+ </tr>
+ <tr>
+  <td>여행지정보</td>
+  <td>
+   <textarea rows="20" cols="20" name="content"></textarea>   
+  </td>
+ </tr>
+ <tr>
+ <td>주소 </td>
+ <td>
+ <input type="text" id="sample5_address" name="addres"  placeholder="주소">
+ <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색">
+</td>
+<tr>
+<td> 여행지위치 </td>
+<td>
 <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
- 이미지 : <input type="file" name="file" width="300" height="300" ><br>
-	   
-	  <input type="submit" value="등록">	
-	</form>
-   </fieldset>
-   
+<td>
+</tr>
+<tr>
+<td>이미지</td>
+<td>
+<input type="file" name="file" width="300" height="300" ><br>
+</td>
+</tr>
+</table>
+<div id="table_search">
+<input type="submit" value="등록" class="btn">
+</div>
+</form>
    <%
 	} else {
 		%>
@@ -84,8 +119,9 @@
 		
 	}
 	%>
-
 </article>
+
+
 <!-- 게시판 -->
 <!-- 본문들어가는 곳 -->
 <div class="clear"></div>

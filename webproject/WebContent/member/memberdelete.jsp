@@ -66,7 +66,7 @@
  	
 <!-- 본문내용 -->
 <article>
-<h1> 회원정보 </h1>
+<h1> 회원탈퇴 </h1>
 <form action="deletePro.jsp" name="fr" method="post" id="join">
 <!-- <fieldset> -->
 <legend>회원가입 정보</legend>

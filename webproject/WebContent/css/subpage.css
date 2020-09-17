@@ -172,8 +172,12 @@ article table#ssum.rvar{
 
 
 .div11 {
-	height: 100px;
+	height: 50px;
 	clear: both;
+}
+
+.div111 {
+	margin: 100px auto; 
 }
 
 article #table_search{margin: 15px 0 10px 0;
@@ -298,6 +302,8 @@ color: #fff;
 	width: 100%;
 	height: 100%;
 }
+
+
 
 .notice .TC td {
 	width: 100%;

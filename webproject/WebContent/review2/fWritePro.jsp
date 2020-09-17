@@ -1,5 +1,5 @@
-<%@page import="com.itwillbs.Review.BoardDAO"%>
-<%@page import="com.itwillbs.Review.BoardBean"%>
+<%@page import="com.itwillbs.Review2.BoardDAO"%>
+<%@page import="com.itwillbs.Review2.BoardBean"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

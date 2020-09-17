@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.itwillbs.Review.BoardBean"%>
+<%@page import="com.itwillbs.Review2.BoardBean"%>
 <%@page import="java.util.List"%>
-<%@page import="com.itwillbs.Review.BoardDAO"%>
+<%@page import="com.itwillbs.Review2.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -37,7 +37,7 @@
 <!-- 메인 콘텐츠 들어가는 곳 -->
 <div class="div11"></div>
 <!-- 리뷰들어가는 곳 -->
-<jsp:include page="../inc/review.jsp"/>
+<jsp:include page="../inc/review2.jsp"/>
 <!-- 리뷰들어가는 곳 -->
 
 <!-- 메인 콘텐츠 들어가는 곳 -->
